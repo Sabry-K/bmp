@@ -1,0 +1,59 @@
+broadleaf:
+  gateway:
+    proxyurls:
+      tenant: https://host.docker.internal:9457
+      pricing: https://host.docker.internal:9447
+      creditaccount: https://host.docker.internal:9458
+      commerceweb: https://host.docker.internal:4000
+      bulkoperations: https://host.docker.internal:9461
+      paymenttransaction: https://host.docker.internal:9458
+      openapi: https://host.docker.internal:3003
+      import: https://host.docker.internal:9461
+      content: https://host.docker.internal:9447
+      orderoperation: https://host.docker.internal:9458
+      adminweb: https://host.docker.internal:3000
+      fulfillment: https://host.docker.internal:9458
+      catalog: https://host.docker.internal:9447
+      order: https://host.docker.internal:9458
+      metadata: https://host.docker.internal:9457
+      sandbox: https://host.docker.internal:9457
+      inventory: https://host.docker.internal:9458
+      customer: https://host.docker.internal:9458
+      notification: https://host.docker.internal:9457
+      scheduledjob: https://host.docker.internal:9461
+      offer: https://host.docker.internal:9447
+      shipping: https://host.docker.internal:9458
+      authapi: https://host.docker.internal:8443
+      cartoperation: https://host.docker.internal:9458
+      adminuser: https://host.docker.internal:9457
+      cart: https://host.docker.internal:9458
+      indexer: https://host.docker.internal:9461
+      vendor: https://host.docker.internal:9447
+      menu: https://host.docker.internal:9447
+      adminnavigation: https://host.docker.internal:9457
+      asset: https://host.docker.internal:9447
+      campaign: https://host.docker.internal:9447
+      search: https://host.docker.internal:9461
+      auth: https://host.docker.internal:8443
+      catalogbrowse: https://host.docker.internal:9447
+      ratings: https://host.docker.internal:9447
+      subscription: https://host.docker.internal:9461
+  routes:
+    custom:
+      subscription:
+        rewrite-path:
+          replacement: /$\{segment}
+          regex: /api/subscription/?(?<segment>.*)
+        predicate: /api/subscription/**
+        uri: ${broadleaf.gateway.proxyurls.subscription}
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          defaultbrokerport: '9094'
+    gateway:
+      # WARNING: This '.*' all-match value should only be used in local development.
+      # Non-local environments should use a carefully crafted value based upon
+      # the cloud ingress configuration and the boundary of trust.
+      trusted-proxies: .*

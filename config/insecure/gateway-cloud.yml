@@ -1,0 +1,54 @@
+broadleaf:
+  gateway:
+    proxyurls:
+      tenant: https://supporting:9457
+      pricing: https://browse:9447
+      creditaccount: https://cart:9458
+      commerceweb: https://commerceweb:4000
+      bulkoperations: https://processing:9461
+      paymenttransaction: https://cart:9458
+      openapi: https://openapi-ui:3003
+      import: https://processing:9461
+      content: https://browse:9447
+      orderoperation: https://cart:9458
+      adminweb: https://adminweb:3000
+      fulfillment: https://cart:9458
+      catalog: https://browse:9447
+      order: https://cart:9458
+      metadata: https://supporting:9457
+      sandbox: https://supporting:9457
+      inventory: https://cart:9458
+      customer: https://cart:9458
+      notification: https://supporting:9457
+      scheduledjob: https://processing:9461
+      offer: https://browse:9447
+      shipping: https://cart:9458
+      authapi: https://auth:8443
+      cartoperation: https://cart:9458
+      adminuser: https://supporting:9457
+      cart: https://cart:9458
+      indexer: https://processing:9461
+      vendor: https://browse:9447
+      menu: https://browse:9447
+      adminnavigation: https://supporting:9457
+      asset: https://browse:9447
+      campaign: https://browse:9447
+      search: https://processing:9461
+      auth: https://auth:8443
+      catalogbrowse: https://browse:9447
+      ratings: https://browse:9447
+      subscription: https://processing:9461
+  routes:
+    custom:
+      subscription:
+        rewrite-path:
+          replacement: /$\{segment}
+          regex: /api/subscription/?(?<segment>.*)
+        predicate: /api/subscription/**
+        uri: ${broadleaf.gateway.proxyurls.subscription}
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          defaultbrokerport: '9094'

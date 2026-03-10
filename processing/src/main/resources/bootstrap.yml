@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      uri: https://localhost:8888/config
+      request-connect-timeout: 5000
+      request-read-timeout: 10000
+      username: configClient
+      fail-fast: true
+      retry:
+        max-attempts: 50
+        max-interval: 10000
+      name: processing
+      enabled: true
+    bus:
+      enabled: true

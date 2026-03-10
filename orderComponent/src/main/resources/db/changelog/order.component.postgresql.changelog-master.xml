@@ -1,0 +1,37 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?><databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"><preConditions><dbms type="postgresql"/></preConditions>
+    <!-- include the master baseline changelog from the services dependency JAR -->
+    <include file="db/changelog/order.starter.postgresql.changelog-master.yaml"/>
+    <!-- Client Schema Extensions Can Be Specified/Generated Below -->
+    <changeSet author="SabryK (generated)" id="1773116846854-1" labels="nonindex">
+        <createTable tableName="subscription">
+            <column name="id" type="VARCHAR(36)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="subscription_pkey"/>
+            </column>
+            <column name="billing_period" type="VARCHAR(255)"/>
+            <column name="created_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="currency_code" type="VARCHAR(3)"/>
+            <column name="customer_ref" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="next_billing_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="order_ref" type="VARCHAR(255)"/>
+            <column name="price_per_period" type="numeric(19, 4)"/>
+            <column name="product_ref" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValue="N" name="trk_archived" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="audit_creation_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="audit_creator" type="VARCHAR(60)"/>
+            <column name="audit_update_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="audit_updater" type="VARCHAR(60)"/>
+            <column name="trk_change_details" type="VARCHAR(10485760)"/>
+            <column name="trk_tenant_id" type="VARCHAR(36)"/>
+            <column name="updated_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

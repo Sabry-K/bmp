@@ -1,0 +1,71 @@
+# Sensitive environment properties to be hosted by Spring Cloud Config Server can be placed here
+# Note, these should be encrypted with the appropriate prefix syntax. This file is usually populated
+# during execution of the `flex:generate` maven goal at the time of project construction when the
+# config server supporting component is enabled in the manifest. This file is generally placed into a
+# git repository which is referenced by Spring Cloud Config Server setup. See `config/README.adoc` for
+# more details.
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          workflowclient:
+            client-secret: '{cipher}{key:version_1}AYCllAabbh2PS6FDiYiH1PXFi//sFAwJUrPSec25gwHprkry3CCt2k1hA9jvy3rJ+K1+U2DSLDgL7pi2FxsYUaeW2eDri2Sr9M9Kec5G3cgtce2qXQMG2uvgyQWNILrWYL39CvdJzbZ6iaMY+FFXLZ7iiYUlhN7difuc4HlraGPMTwx1BKjoQjYBLkFg/CCPToV37bI0xoHEavj90CQFKSIVRajcIFdg/6IpfDBXR8rLeKUvPKHtfKr0bVy5zpPonNjdfmB/nXfy5atXX+PrfVzE+qzfKzD9j65fY1nwqPBu6xMyPnFHYU0SyJg7ctRi9uoP/YHVnxvYhjdy8E2xzibmLDGYBIwS1C4I6F9W/XUDnKFxy6d7KxL0Hv9N5kM1ZXscVV5piJMGls8vfP8ChGvom58trX3sPpl2b0Pmh60X5+WriLAOE68U9ozILsAKGES+Mk5YCzaE+cwSer2S65SZAty4lPEJCMLY1exPId+JiXJeNo0EDrPdNwSN58IFqG4+l7fqZKQJgB0cmrzYaDhv6vNvLCdRPvg1LaZMxHqJac5ckhHhC+mkR/Fx5f6zY1o='
+          tmfcatalogclient:
+            client-secret: ${broadleaf.tmfcatalogclient.secret}
+          catalogbrowseclient:
+            client-secret: '{cipher}{key:version_1}AYAs9V9+aAQbU69E/sCq0xK6hyY910f/BGLXp50lXMuAXCueiEQgUaiecK0VbkkVZxAj/MAbmkbvDUK8v0nHwKJPckLxn1a2JLodc9GqR5e0Oj2evEwg+zQBV6o1RoAUbQmXkXt/B4e2Aolh7egj7dWfFk2RXhG5uekDlKh//FRFj+tL8jjn6LRcCQy0ZFVN1naR0FWWUST2l93xWEGUf8VisFGujeR0MbVnG2Cgb3rw7I8EHulWMXVcpeLV3uHvLoCNntXT/qvJsw6ppRs1TMgEnDJCaOm+/z8Vj7qTemW4C+eHstRuGxhKXSo9RY/Sso44Si2tqWlSiIKEXEuTbUPvOEzbHJ12H9Jq7gFHz0Ss0KaKx96R31X+hzIunDTyt/LZz6SR3xR4uaUu3XM304qvc+EM/SgDwP3BHzMYy1aMllu02JQK3qiBJ8nq1+OOnSBuHZkGWNloMWFf4iMLOcRfwXAtqNlOg4tZ+Vy8UpkhyHn8Alw/APZpzW5K4hbBO30tblZVaVn09I7wqOoHRRs7gZdvWEd5dBzMYgCJPi7ldsZXXY7mV123KuksE2fiTKQ='
+          tmfcoreclient:
+            client-secret: ${broadleaf.tmfcoreclient.secret}
+          pricingclient:
+            client-secret: '{cipher}{key:version_1}AYCgHYnUYixQqJ+sxUOEF4uVZs15JUxcjYZF0xcfRPzVHaOdTRB01Qx19MU5TWIFgwG2veyY7rQx5/CGnwN+pCJOKnS4M4sVARF1sS78AmjpPL2TTq4TC0kQJT/zDEFfaqFJhdnnsK7V1ZHMQ8DYtWtz+Ry9Xr2GKDYF/1ApgB5Em7AYy3bt5uA1t1U8VXrZ1Ic+gHwELMsTPC99ykKCxqtFxOHiYyPVZH93W4u7cZhmBtqAoX5gRvkqbvFeOKiF0JxNwavzleKqQnDuBpt5Rrt8me4rbO9GRghh7ZIp9K+uFxwaIurlq9Ij+QglP01sR5+R8LQrKErxXyskj9bwGXxySb0wyHVLiijmDzmTxbAozalhuWZT9/FeXCmbzlkhyWuQ3LaiktQ5V9xENRrL7fsIScbs6X8cXQXwsIQNHSEyqiACuxBOf4ahZ3Gl7Mlkwr/TbQjluzb0UCH/3mJIVB42YbOS3/9Za2bjBr4abEtEyNrU8dFpHh7Ko2yTU0qSwkoi+M+w1rqzbrWwGAdHy3yEbiYvFfwQ7MoVc73BZ3hYEyCWV3tUxnxlxYyObdqwKbM='
+  cloud:
+    stream:
+      kafka:
+        binder:
+          configuration:
+            ssl:
+              truststore:
+                password: '{cipher}{key:version_1}AYBjFQf3yWP1vhk/ZClDxHuTUsrSj8ZVGf9ZAusp1M7vlDllCWoPDBM8xIH9NKF/biFW+7Aju/yHvy3EbU54mTiyWaXk774yG0/vdWFXXrBasLeKRfreVi5lqzUsMTsNi3ZaCF0NrvjJqlcqy0qlwFPZFvX90c3AMu7BVNATBoNawQUsBC7tdoJ4ZQCRwQDnd4gc3z82cINAZp35hq0eyk0pj8x8PnxwRjDG5gZvXjZcP8+iKUXNUXCLDrzY7AWS/+8PJcXeVgo6k66fYF0xu7UB76rLOlKWQcb0ojN8i2ttZxEef6Ipi99o0teQebrB2kqWDxVmrOZeYF6iAcdVkf/9d3OqK4uZZ4QMP7jR74CPbb5xV1XQqj/KkCrmReQGZq7FNXYQ3BC0iOyFvkE0sM025ncUgnoRWNElR2lKF3wHBnAuIZp1Duew4vabGtjhh+4miGYp1lhySnppIVrsCNrswQxBXjNh74rT9quaJRFidQDORz5QG1ybTCd/7yL82EUUyw6yGUrRyggb1wVMYci8BbbQwp3jfQzWktzRxtixNI6KGh9Tx1SMyfC0SUxMDq8='
+            security:
+              protocol: SASL_SSL
+            sasl:
+              mechanism: PLAIN
+broadleaf:
+  sandbox:
+    preview:
+      decoder:
+        encoded-public-key: '{cipher}{key:version_1}AYAxkDZ2V1y4MXU0VoPd9TSaZ0hkgBywnl+URjIT8tmGZSv7wqwaiX24Y6tmYtYHE8WIrxxeAakcVTtFYFvH6Jog6DGIr7UPXdW5B87sXv5zRu4eyf6y+heSZMKHS4tuwFCg1cn8PfEooezah2QfWNpr/UpopX5rxNKBYbxe0j1cC+y7UTUMNPd0o35zQLvz5zl0WAz8APn5w6rQlToafwyHrBzBXkSXNOgRPxcfNrrBXnAabLG0Y8DDIwyQkrCypL3OCXcjs58JOzpa4v43CZgsdjbvU7GhjcXx7Fs61+CmRMiYf6LWm4VbiGtCE9etzaQ2sD6X3fE7KjuhSiaLiKtQMKGamRa9vt87qhe+IgELJctij6mUPh4xAE8UIlAPcGRT41xmSSswLZviB1u5CyMTyXs3ZO1jnz2jg6s3ZLj0z7iv7LvbBiqh2Q5Rtu0IIThNMsBDS6Ib2GA2kJQq/UCS+SKr0Z0oi4vKFGy/8xeLxZM2jqHi1KU7iBK7RNgizlI2pkN0syk2IS2nWRddpGYdcBxBFHmOw+7amlHE6kT30BzTqvDAX6k7Oy80UfirKk5hi3LTbRqkm2a9KUf1Iy1r86vGyLumFKxU5kM99pa5YrX9U3MXTNNQqcr2JMxcZZT2EPXyFKxGdPACZf1oxUXlcRJUN6p0uqvuNCSs1x+a+2tRGqe2R+P1FhtsUctZ35fOZj/h8a58OrlMcnDDl6eSPGR7tUtX6lOoNv0E/fXLbleOZy1/3/wauxviTSTww0ReidzPZDSLVWmzo1eNbZrAo06aGoh2BZkLdH4B4TN9bAinFOSJts/kmvpm8A5HHUsPzJm2sE+teV9UK1S9i6P1oUkxcR656ukpAT6S27xxs2DUZm6YEFzOgZCnGEiPE1WrzluhZCQ6YtLpfavTLIDxx9gK65nY1wFs5aEhGYkPaMHfBuNUkqJ6CqmHjyGhhiaIL01zgrPvymLzJBiF+K9h3ZTIbMyPUnbsGTdXbLH+xyP1H9fHGNLJbtwgMv6+utYpeXW/xeFdWWEAukdhFwCWJZXLgWKgrolT4EU6IHiyeg=='
+  default:
+    spring:
+      cloud:
+        stream:
+          kafka:
+            binder:
+              configuration:
+                ssl:
+                  truststore:
+                    location: /var/keys/kafka-truststore.jks
+    java:
+      security:
+        auth:
+          login:
+            config: /var/keys/zk-kafka-client-jaas.conf
+    server:
+      ssl:
+        key-store: file:/var/keys/https-keystore.jks
+  datasource:
+    password: '{cipher}{key:version_1}AYA+JqbOIgrLgZ9D4VCzc0UidhexVUsBLDAyctf3B6fNtO1ZdnXHVr5ovOZ2ZWTeIRgsyalvV6i7kpjXE0LVOzLqfmqYOHzqE9XB8YLjCwYt/FwdNK5q6hjqwL8YgaG7TfJGQRhjZWCdMPO7VD7DkfuAh0E6jgGv6SJt5Hi4jvgh7tDjIApcoLlSLQzrWLtzzEy58JLwI8BZZ9X7cr7VR8HxW20GFvfBvevq9JsjsQ1kOxnuwHZaSQSOs5lXSsUosMCNwhVR0w3hBV5ZDPbVgDmlYWk2ogBX1/aAMjRHrBMlWRwUasv8mjl3MHh9oBDnDObrtIF6Lv4MIxl0HA+JPZfhBay2gxtg0K2XFbd3GuyFW/qG9ePdWVclRM+jYLWgVHVdD1i3nzHBk5npwJCFcj2vgfrrG3Jw7NOgxcjSCURwKzUztzRcRBjzC/6LhIlEMAEhDSECSEhUk7rbfwhO1o35HXg43FSXyixBWVCe3B5EjqPuTCZios2+00gu5EZJIjm31+E6IwfbYey7CkKbBdmY/m2FAV0pa9Bp3KTCTdYjyu9ulpz0Mjdx/5sf3kgb8S8='
+  composite:
+    datasource:
+      password: '{cipher}{key:version_1}AYA+JqbOIgrLgZ9D4VCzc0UidhexVUsBLDAyctf3B6fNtO1ZdnXHVr5ovOZ2ZWTeIRgsyalvV6i7kpjXE0LVOzLqfmqYOHzqE9XB8YLjCwYt/FwdNK5q6hjqwL8YgaG7TfJGQRhjZWCdMPO7VD7DkfuAh0E6jgGv6SJt5Hi4jvgh7tDjIApcoLlSLQzrWLtzzEy58JLwI8BZZ9X7cr7VR8HxW20GFvfBvevq9JsjsQ1kOxnuwHZaSQSOs5lXSsUosMCNwhVR0w3hBV5ZDPbVgDmlYWk2ogBX1/aAMjRHrBMlWRwUasv8mjl3MHh9oBDnDObrtIF6Lv4MIxl0HA+JPZfhBay2gxtg0K2XFbd3GuyFW/qG9ePdWVclRM+jYLWgVHVdD1i3nzHBk5npwJCFcj2vgfrrG3Jw7NOgxcjSCURwKzUztzRcRBjzC/6LhIlEMAEhDSECSEhUk7rbfwhO1o35HXg43FSXyixBWVCe3B5EjqPuTCZios2+00gu5EZJIjm31+E6IwfbYey7CkKbBdmY/m2FAV0pa9Bp3KTCTdYjyu9ulpz0Mjdx/5sf3kgb8S8='
+  resource:
+    security:
+      oauth2:
+        encodedpublickey: '{cipher}{key:version_1}AYCFPDkKqIF8w+ObCuh6U6pGKz6zI/hZC2w7UXjBGLM6rt4tCDoAQtD3R0+8/ZU3X6XHClFv5bOuYfnddyDWtpYyKdgzR9vVE7pM/1kieUiP5X7aLXJdRKLON4TXratEq4XTrH27h0+UxxSzLNR0Jfvs6iXwLPqp3Bsouhf8/eRo8X0R7hJOShpK8P2HWxmMemBFN/pgRnfelDtUDgtFiuinJgBis8KYqNmghep4p5zXAwEEILZK72OasnRJXZDSuT29kjvD8k53smS2vryKHwM3DLdyQeZZikKQREhd0ZQloYLDb5+Q+8VSRyYrTMoJRBc7QwFF0EWE5aQj/CEq9FXA1neIT/N62/MLAcxuWrrBvsG7B3gkvX7PdeOV1/EP35c69SAGjx+U1vI1VtV7NvMS3ulQNpKRvK/PXj9kUaRQk+3SwYTXupkDb8GnI+i5IPE/QcSVk6qf7GhC+333t87j61sc9OS/5jltQCqwUy9y5wGDPJrOz/FmFC+A8tlDQLfnnA4ARyqK8eJU1EFIIsl8baP3JjDQ6ubbNQMFISQBvsQJIBMc+5axLo1y7Wwm8iEW2xSTJMCX5qjjcUDhVUmZ0v4PQFX6/rIui8TNnsoULDeFqniDewQUGKFFsDBBaZBZ0TmICFtbpio2sADJZTa7tTK/vbUBamap/fT0VoAo2wvj2q/fl25mCmzKJTbcyH3LHyxpO/kwJPoDebb4HAfBW/CQQKtkeCSIfBCXfJop5SO2bhP4XBUpwmatlFYAvRG23nCMu6DAuC0BK6dLwAdCm9o8d+Dyb1qzd3Fx02R9aVO/K6yk6mdVrpVr2QxlISaMx1QDZDrQ1CBa3QVhVvkXpyQb+JVeFjEk8s/cKNl2SFR1x7q+dEzEvQUIgK2QlJVIdOQzkYACxHM+79YpGmMPOh+nBAo2wCxQ5PB08+YuvPMygeRTIN9yx5hNullvdTNRsQXDOnKLZTeJltUEZEAg28/+F1oavhTSrDc/XokVCG4XqG+BWms4HYQ3d5ccgZ8JMz4GfMBHtGX/P4EzjQZ/ewsnpVW+aXz59iK+ViJMOQ=='
+        encodedpublickeys:
+          '1': '{cipher}{key:version_1}AYCqUeVRWIXxGT7tJ98ZKonYWf7SGia0rDLl5jwb74zOk2qRUQSncv5qb+194LynISRMGQuzWCbsSrTPMs9TZuBl2lLrtLY2dWKM2GUqX6l07B1gjksMfmJiQli+gYSqi8fPqq/5dq3Va/AuBPb19zrFimEFvkB5DHZe7SSQTJdU48jCsa9sXsv7UzXh55dLnGfrUfbYHNTQkmcJQQwjypHtBDuFDIt5VGINrxtGTyccjTjL62T/qTtusnzQ69ZHrv8xQbfhLJuxhMTY2io+VuWO6OiLlGyCJ3ZKmbUblbjON2VNQNlr13wbL9a51hdLJ6GOe/qawfGlsMhR5mMZawv7zYJkuRIvEJUhOPFsMeWLxo7srzE8qY69siQvkPFOZS5uJQSkj48LeGtBO2QAblkvGjYZuEIUQPUsRUAysgmGQu/LHbVDOIjE9yKl+KjWnpGcxI7YjL0SGhAzRnRG9141/fWEKyheYOoR/EHDZyH4MvMwmpvb3ws5XmAe0c0f4bzRxMP0XzjJlZWjz17zQoc09kAQBs7cxb/9I9phHI95E6DZkvuJtgkGGJxnwYPv/YGmbIs5rRYx394ZNJJw2BUAaO+5/azGXu7n0fBq+V0oIYByl32IFj5DV3xgwML34ExwMqSYiskodTLSQVhCbEHaPOtpAQiLpYzzbGzpYGPfV0Pws56D13xJzSmzrvKSCKcD0xq1PsZ3fOW1+/swWZmUlH0aGV+Q+VWB2Pz/ELPoLzNW8ZXsNqcjwb6CU/H/lv3BWGJEUfB1CHeQzq0klYtjrrz9ywbGxS+CMqgiaiOd6PyScV4oexlgdO1qRAiTeL2ORFl6uWQZmbBDtb6ii52MfsTA42jhKo1ksDibQVwu52DdrVd6oOEbgJKFi5QvCoD6GrI1QmIUYbFB09uoOwzlmErT8hFNyZLCFoLliEQTWchASWalASJ+M0NCvUCr/n4to4xKwELtIUWAOT2hnSZEWiEXxeVey9cfUK7h4zFk11DxgqFSyoRinadUfZCu+UEid7igusQjA9UL9RWJCkBMrcr8/54qVGZzYYQtlNa19w=='
+server:
+  ssl:
+    key-store-password: '{cipher}{key:version_1}AYAmFZk6EJ5rEQYoPuBkKFNIrMqq0AnGbeCPJq60EwpIqLItvpBMqt9l8hSZ/jjav/l8JcrSJaVe1g6H1Be5bYuCrHfKCVmJ5M4Tw9w5XOg8VuThJWvZgsXl9QuY6iB8k6+yZC2OPVEsMnKiGGC/kIs0XxJJ1zlipnh6srlbcBNBrwBqNgAR+PDBgnXfawe6IfHGGypO3W1vMZt0uJpTLULFuCcoRTevnl2eEcE9kbE0JV7qNNXpZbj6yptkO7EdUiug21Q+Ln5Zgbg6CSDLFoT63AxoxVok2rND7fwYcinZKWYczgkb2SrpQylbs9ZGHW/mqLtAxaT8+NG918QRaZLaF7amVOacOPGgskFOpWCxNAc13TYQ/lEkzzdGrGxUx8JdulE6mivTrSNTv017IbPCIqPuPugWFEIkPRxYCzlWaE0FaqRw7mnsDVbBuGgb18LygHAJN2xBR57+mo7cnYNkLF47UKSuFSbjr0Fjv4AXP9uGLN2ihp4spO9DlQC/WAYjrZw7WNzxsI7kizpnHImckdr3MXrzRXuYFd1ig3XuGTzxHpg5x7qosWYKmmUMXCw='

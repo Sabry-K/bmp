@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.broadleafcommerce.microservices</groupId>
+        <artifactId>broadleaf-microservices-flex-parent</artifactId>
+        <version>2.2.1.2-GA</version>
+        <relativePath/>
+    </parent>
+    <repositories>
+        <repository>
+            <id>broadleaf-microservices</id>
+            <name>Broadleaf Microservices</name>
+            <url>https://repository.broadleafcommerce.com/repository/microservices/</url>
+        </repository>
+    </repositories>
+    <artifactId>microservice-component-order</artifactId>
+    <groupId>com.vcs.bmp.microservices</groupId>
+    <name>Order Component Starter</name>
+    <description>Order Component Starter</description>
+    <version>1.0.0-SNAPSHOT</version>
+    <properties>
+        <broadleaf-service-key>order</broadleaf-service-key>
+        <skip-schema>false</skip-schema>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.vcs.bmp.microservices</groupId>
+            <artifactId>microservice-flexpackage-manifest</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--Component Dependencies-->
+        <dependency>
+            <groupId>com.broadleafcommerce.microservices</groupId>
+            <artifactId>broadleaf-order-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-test-binder</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+        <!--Supporting Dependencies-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!--Additional Dependencies-->
+        <dependency>
+            <groupId>com.broadleafcommerce.microservices</groupId>
+            <artifactId>broadleaf-common-extension-compatibility-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.broadleafcommerce.microservices</groupId>
+            <artifactId>broadleaf-common-extension-compatibility</artifactId>
+        </dependency>
+    </dependencies>
+</project>
