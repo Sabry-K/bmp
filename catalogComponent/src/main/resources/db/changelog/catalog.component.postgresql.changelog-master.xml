@@ -2,16 +2,15 @@
     <!-- include the master baseline changelog from the services dependency JAR -->
     <include file="db/changelog/catalog.starter.postgresql.changelog-master.yaml"/>
     <!-- Client Schema Extensions Can Be Specified/Generated Below -->
-    <changeSet author="SabryK (generated)" id="1773070646125-2" labels="nonindex">
-        <createTable tableName="subscription_product">
-            <column name="subscription_end_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
-            <column name="subscription_start_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+    <changeSet author="SabryK (generated)" id="1773231675423-2" labels="nonindex">
+        <createTable tableName="pre_vetted_product">
+            <column name="pre_vetted" type="BOOLEAN"/>
             <column name="id" type="VARCHAR(36)">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="subscription_product_pkey"/>
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pre_vetted_product_pkey"/>
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="SabryK (generated)" id="1773070646125-3" labels="nonindex">
-        <addForeignKeyConstraint baseColumnNames="id" baseTableName="subscription_product" constraintName="fkcj6fabpl9uo28bir0qgjbsmw0" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="blc_product" validate="true"/>
+    <changeSet author="SabryK (generated)" id="1773231675423-3" labels="nonindex">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="pre_vetted_product" constraintName="fkq0bgqeeb8avxiecvama7mwgff" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="blc_product" validate="true"/>
     </changeSet>
 </databaseChangeLog>

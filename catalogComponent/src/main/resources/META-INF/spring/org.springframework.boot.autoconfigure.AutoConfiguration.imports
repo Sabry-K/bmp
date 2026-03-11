@@ -1,1 +1,2 @@
-com.vcs.bmp.microservices.catalog.CatalogConfiguration
+com.vcs.bmp.microservices.catalog.configurations.CatalogConfiguration
+com.vcs.bmp.microservices.catalog.configurations.RepositoryContributionsConfigurations
