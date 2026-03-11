@@ -5,6 +5,7 @@ import com.vcs.bmp.microservices.catalog.service.PreVettedProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,9 +19,9 @@ public class PreVettedProductController {
     private final PreVettedProductService preVettedProductService;
 
     @GetMapping("/pre-vetted")
-    public Page<PreVettedProduct> findPreVettedProduct(Pageable pageable) {
+    public ResponseEntity<Page<PreVettedProduct>> findPreVettedProduct(Pageable pageable) {
 
-        return this.preVettedProductService.findPreVettedProducts(pageable);
+        return ResponseEntity.ok(this.preVettedProductService.findPreVettedProducts(pageable));
 
     }
 }
