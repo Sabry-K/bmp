@@ -25,7 +25,7 @@ public class PreVettedProductController {
 
     private final PreVettedProductService preVettedProductService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET ,  path = "/pre-vetted")
     @Policy(permissionRoots = {"PRODUCT"})
     public Page<PreVettedProduct> findPreVettedProduct(HttpServletRequest request,
                                                        @ContextOperation(OperationType.READ) ContextInfo context,
