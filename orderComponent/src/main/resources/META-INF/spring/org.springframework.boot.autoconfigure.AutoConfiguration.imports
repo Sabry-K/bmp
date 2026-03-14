@@ -1,1 +1,2 @@
-com.vcs.bmp.microservices.order.SubscriptionConfiguration
+com.vcs.bmp.microservices.order.configurations.SubscriptionConfiguration
+com.vcs.bmp.microservices.order.configurations.OrderConfigurations

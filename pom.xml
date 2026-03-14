@@ -20,5 +20,6 @@
         <module>subscriptionComponent</module>
         <module>catalogComponent</module>
         <module>orderComponent</module>
+        <module>orderopsComponent</module>
     </modules>
 </project>

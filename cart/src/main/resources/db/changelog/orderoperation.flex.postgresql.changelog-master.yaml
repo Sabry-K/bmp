@@ -12,5 +12,5 @@ databaseChangeLog:
     - sql:
         sql: create schema if not exists "orderoperation"
 - include:
-    file: db/changelog/orderoperation.flexdemo.postgresql.changelog-master.yaml
+    file: db/changelog/orderoperation.component.postgresql.changelog-master.yaml
     author: broadleaf-changelog-generation-plugin

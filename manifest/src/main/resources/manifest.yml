@@ -429,7 +429,7 @@ components:
     cloud: orderops
     docker: orderops
     local: localhost
-  enabled: false
+  enabled: true
   ports:
   - port: 8472
     targetPort: 8472

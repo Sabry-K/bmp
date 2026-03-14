@@ -1,4 +1,4 @@
-package com.vcs.bmp.microservices.order;
+package com.vcs.bmp.microservices.order.configurations;
 
 
 import com.broadleafcommerce.common.extension.data.DataRoutes;

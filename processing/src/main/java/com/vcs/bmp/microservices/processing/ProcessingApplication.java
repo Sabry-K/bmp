@@ -1,7 +1,6 @@
 package com.vcs.bmp.microservices.processing;
 
-import com.broadleafcommerce.common.jpa.data.entity.JpaEntityScan;
-import com.vcs.bmp.microservices.order.SubscriptionConfiguration;
+import com.vcs.bmp.microservices.order.configurations.SubscriptionConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;

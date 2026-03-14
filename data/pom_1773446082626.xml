@@ -178,6 +178,10 @@
         </dependency>
         <dependency>
             <groupId>com.broadleafcommerce.microservices</groupId>
+            <artifactId>broadleaf-order-operation-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.broadleafcommerce.microservices</groupId>
             <artifactId>broadleaf-payment-transaction-services</artifactId>
         </dependency>
         <dependency>
@@ -213,12 +217,6 @@
         <dependency>
             <groupId>com.vcs.bmp.microservices</groupId>
             <artifactId>microservice-component-order</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <!--Customized component: orderops-->
-        <dependency>
-            <groupId>com.vcs.bmp.microservices</groupId>
-            <artifactId>microservice-component-orderops</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <!--Config Server Dependencies-->

@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/orderoperation.component.postgresql.changelog-master.xml
+  

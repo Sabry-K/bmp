@@ -1,3 +1,10 @@
 # Place properties here for your library component override. Any properties you
 # declare here will override those declared by Broadleaf in the original library
 # component.
+
+broadleaf:
+  cartoperation:
+    orderprovider:
+      url: https://localhost:8470/order
+      order-uri: /orders
+      count-orders-with-specific-item-for-user-uri: /purchased-items/count
