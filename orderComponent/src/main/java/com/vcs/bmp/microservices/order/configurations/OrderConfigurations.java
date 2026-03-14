@@ -24,7 +24,7 @@ import java.util.Collections;
 public class OrderConfigurations {
 
     @Bean
-    public JpaTrackableRepositoryDelegateHelper<JpaOrder> delegateHelper() {
+    public JpaTrackableRepositoryDelegateHelper<JpaOrder> OrderDelegateHelper() {
         return new DefaultJpaTrackableRepositoryDelegateHelper<>(JpaOrder.class,
                 CustomOrderRepository.class);
     }
