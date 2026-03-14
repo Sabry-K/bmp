@@ -30,7 +30,7 @@ public class OrderConfigurations {
     }
 
     @Bean
-    public RepositoryContribution contribution() {
+    public RepositoryContribution orderRepoContribution() {
         return new RepositoryContribution()
                 .withBaseRepositoryInterface(JpaOrderRepository.class)
                 .withQueryFragments(Collections
