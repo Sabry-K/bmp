@@ -3,15 +3,15 @@ package com.vcs.bmp.microservices.cartoperation.configurations.properties;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.context.annotation.Configuration;
 
 @Getter
 @Setter
-@ConfigurationPropertiesScan
+@Configuration
 @ConfigurationProperties(prefix = "broadleaf.cartoperation.orderprovider")
 public class CustomOrderProviderProperties {
-    private String url;
-    private String orderUri;
-    private String countOrdersWithSpecificItemForUserUri;
-    private String serviceClient = "cartopsclient";
+     String url;
+     String orderUri;
+     String countOrdersWithSpecificItemForUserUri;
+     String serviceClient = "cartopsclient";
 }
