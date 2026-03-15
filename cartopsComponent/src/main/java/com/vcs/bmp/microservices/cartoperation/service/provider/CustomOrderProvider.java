@@ -12,6 +12,8 @@ import com.vcs.bmp.microservices.cartoperation.configurations.properties.CustomO
 import com.vcs.bmp.microservices.cartoperation.domain.dto.ReadCustomerOrdersCountWithSpecifiedItemRequest;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction;
@@ -24,6 +26,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Component
 public class CustomOrderProvider extends AbstractExternalProvider implements ICustomOrderProvider {
 
+    private static final Logger log = LogManager.getLogger(CustomOrderProvider.class);
     private final WebClient webClient;
     private final ObjectMapper objectMapper;
     private final TypeFactory typeFactory;
@@ -61,6 +64,10 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
     }
 
     private UriComponentsBuilder getBaseUri() {
+        log.info("THE ORDER URL IS {} " , this.properties.getUrl());
+        log.info("THE SERVICE CLIENT IS  {} " , this.properties.getServiceClient() );
+        log.info("THE ORDER URI Context {} " , this.properties.getOrderUri() );
+        log.info("THE END POINT PATH IS {} " , this.properties.getCountOrdersWithSpecificItemForUserUri() );
         return UriComponentsBuilder.fromHttpUrl(this.properties.getUrl())
                 .path(this.properties.getOrderUri());
 
