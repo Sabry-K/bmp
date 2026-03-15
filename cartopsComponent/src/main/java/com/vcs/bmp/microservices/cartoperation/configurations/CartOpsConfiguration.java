@@ -17,6 +17,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
@@ -35,28 +36,6 @@ import java.util.function.Supplier;
 public class CartOpsConfiguration {
 
     private CustomOrderProvider customOrderProvider;
-
-
-    @Bean(name = "cartItemValidationActivity")
-    @Order(1000)
-    CheckoutWorkflowActivity cartItemValidationActivity(CatalogProvider<? extends CatalogItem> catalogProvider,
-                                                        CartItemConfigurationService<? extends CatalogItem>
-                                                                cartItemConfigurationService,
-                                                        MessageSource messageSource) {
-        return new ConflictingOrdersValidationWorkflow(catalogProvider, cartItemConfigurationService, messageSource,
-                customOrderProvider);
-    }
-
-
-    @Bean
-    public CustomOrderProvider customOrderProvider(
-            @Qualifier("orderWebClient") WebClient orderWebClient,
-            ObjectMapper mapper,
-            TypeFactory typeFactory, CustomOrderProviderProperties customOrderProviderProperties) {
-        this.customOrderProvider = new CustomOrderProvider(orderWebClient, mapper
-                , typeFactory, customOrderProviderProperties);
-        return customOrderProvider;
-    }
 
     @Bean
     public WebClient orderWebClient(
@@ -86,5 +65,27 @@ public class CartOpsConfiguration {
                 .apply(oauth2FilterSupplier.get().oauth2Configuration())
                 .build();
     }
+
+    @Bean
+    public CustomOrderProvider customOrderProvider(
+            @Qualifier("orderWebClient") WebClient orderWebClient,
+            ObjectMapper mapper,
+            TypeFactory typeFactory, CustomOrderProviderProperties customOrderProviderProperties) {
+        this.customOrderProvider = new CustomOrderProvider(orderWebClient, mapper
+                , typeFactory, customOrderProviderProperties);
+        return customOrderProvider;
+    }
+
+    @Bean(name = "cartItemValidationActivity")
+    @Order(1000)
+    @DependsOn({"customOrderProvider" , "orderWebClient"})
+    CheckoutWorkflowActivity cartItemValidationActivity(CatalogProvider<? extends CatalogItem> catalogProvider,
+                                                        CartItemConfigurationService<? extends CatalogItem>
+                                                                cartItemConfigurationService,
+                                                        MessageSource messageSource) {
+        return new ConflictingOrdersValidationWorkflow(catalogProvider, cartItemConfigurationService, messageSource,
+                customOrderProvider);
+    }
+
 
 }

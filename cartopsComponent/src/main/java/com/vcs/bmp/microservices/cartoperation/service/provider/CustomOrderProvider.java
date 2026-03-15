@@ -13,14 +13,15 @@ import com.vcs.bmp.microservices.cartoperation.domain.dto.ReadCustomerOrdersCoun
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction;
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @Setter
 @Getter
+@Component
 public class CustomOrderProvider extends AbstractExternalProvider implements ICustomOrderProvider {
 
     private final WebClient webClient;
