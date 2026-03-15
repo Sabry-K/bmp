@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "broadleaf.cartoperation.orderprovider")
 public class CustomOrderProviderProperties {
-     String url;
-     String orderUri;
-     String countOrdersWithSpecificItemForUserUri;
-     String serviceClient = "cartopsclient";
+     private String url = "https://localhost:8470/order";
+     private String orderUri = "/orders";
+     private String countOrdersWithSpecificItemForUserUri = "/purchased-items/count";
+     private String serviceClient = "cartopsclient";
 }
