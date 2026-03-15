@@ -733,8 +733,10 @@ supporting:
     local: localhost
   ports:
     port: '2181'
-extensions: [
-  ]
+extensions:
+  - artifactId: broadleaf-microservices-starter-heatclinic
+    groupId: com.broadleafcommerce.microservices
+    version: 1.1.6-GA
 docker:
   components: admingateway,adminweb,database,broker,search,zk,commercegateway,commerceweb,openapi,config,akhq
   imageDeploymentRepoDomain: repository.broadleafcommerce.com
