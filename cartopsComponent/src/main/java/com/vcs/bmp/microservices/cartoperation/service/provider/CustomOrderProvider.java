@@ -29,7 +29,7 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
     private final ObjectMapper objectMapper;
     private final TypeFactory typeFactory;
     private final CustomOrderProviderProperties properties;
-    
+
 
     public CustomOrderProvider(WebClient webClient, ObjectMapper objectMapper,
                                TypeFactory typeFactory, CustomOrderProviderProperties customOrderProviderProperties) {
@@ -62,7 +62,6 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
     }
 
     private UriComponentsBuilder getBaseUri() {
-        log.info("url @value {} " , this.url);
         log.info("THE ORDER URL IS {} " , this.properties.getUrl());
         log.info("THE SERVICE CLIENT IS  {} " , this.properties.getServiceClient() );
         log.info("THE ORDER URI Context {} " , this.properties.getOrderUri() );
