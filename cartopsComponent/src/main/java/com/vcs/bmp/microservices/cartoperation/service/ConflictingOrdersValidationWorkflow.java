@@ -9,10 +9,8 @@ import com.broadleafcommerce.cartoperation.service.checkout.workflow.activity.Ca
 import com.broadleafcommerce.cartoperation.service.configuration.CartItemConfigurationService;
 import com.broadleafcommerce.cartoperation.service.provider.CatalogProvider;
 import com.broadleafcommerce.data.tracking.core.context.ContextInfo;
-import com.broadleafcommerce.order.common.domain.CustomerRef;
 import com.vcs.bmp.microservices.cartoperation.domain.dto.ReadCustomerOrdersCountWithSpecifiedItemRequest;
 import com.vcs.bmp.microservices.cartoperation.service.provider.CustomOrderProvider;
-import lombok.Locked;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.MessageSource;

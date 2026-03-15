@@ -29,10 +29,7 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
     private final ObjectMapper objectMapper;
     private final TypeFactory typeFactory;
     private final CustomOrderProviderProperties properties;
-
-    @Value("${broadleaf.cartoperation.orderprovider.url}")
-    private String url;
-
+    
 
     public CustomOrderProvider(WebClient webClient, ObjectMapper objectMapper,
                                TypeFactory typeFactory, CustomOrderProviderProperties customOrderProviderProperties) {
