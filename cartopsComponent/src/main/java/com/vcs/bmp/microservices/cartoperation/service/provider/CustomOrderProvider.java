@@ -1,12 +1,9 @@
 package com.vcs.bmp.microservices.cartoperation.service.provider;
 
 
-import com.broadleafcommerce.cart.client.domain.Cart;
 import com.broadleafcommerce.cartoperation.service.provider.external.AbstractExternalProvider;
-import com.broadleafcommerce.cartoperation.service.provider.external.page.ResponsePageGenerator;
 import com.broadleafcommerce.common.extension.TypeFactory;
 import com.broadleafcommerce.data.tracking.core.context.ContextInfo;
-import com.broadleafcommerce.data.tracking.core.exception.EntityMissingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vcs.bmp.microservices.cartoperation.configurations.properties.CustomOrderProviderProperties;
 import com.vcs.bmp.microservices.cartoperation.domain.dto.ReadCustomerOrdersCountWithSpecifiedItemRequest;
@@ -14,6 +11,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
 import org.springframework.security.oauth2.client.web.reactive.function.client.ServletOAuth2AuthorizedClientExchangeFilterFunction;
@@ -31,6 +29,9 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
     private final ObjectMapper objectMapper;
     private final TypeFactory typeFactory;
     private final CustomOrderProviderProperties properties;
+
+    @Value("${broadleaf.cartoperation.orderprovider.url}")
+    private String url;
 
 
     public CustomOrderProvider(WebClient webClient, ObjectMapper objectMapper,
@@ -64,6 +65,7 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
     }
 
     private UriComponentsBuilder getBaseUri() {
+        log.info("url @value {} " , this.url);
         log.info("THE ORDER URL IS {} " , this.properties.getUrl());
         log.info("THE SERVICE CLIENT IS  {} " , this.properties.getServiceClient() );
         log.info("THE ORDER URI Context {} " , this.properties.getOrderUri() );
