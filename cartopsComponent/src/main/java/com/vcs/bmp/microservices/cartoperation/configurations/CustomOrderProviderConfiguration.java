@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vcs.bmp.microservices.cartoperation.configurations.properties.CustomOrderProviderProperties;
 import com.vcs.bmp.microservices.cartoperation.service.provider.CustomOrderProvider;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.AutoConfigureBefore;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -22,7 +22,7 @@ import javax.net.ssl.SSLException;
 import java.util.function.Supplier;
 
 @Configuration
-@AutoConfigureBefore(CartOpsConfiguration.class)
+@EnableConfigurationProperties(SSLVerificationProperties.class)
 public class CustomOrderProviderConfiguration {
 
     @Bean
