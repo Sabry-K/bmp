@@ -5,7 +5,9 @@
 # file to achieve different environment profiles according to Spring's
 # environment profile support:
 # https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.files.profile-specific
-
+server:
+  ssl:
+    enabled: false
 broadleaf:
   common:
     ssl-verification:

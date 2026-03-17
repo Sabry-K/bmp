@@ -17,3 +17,7 @@ broadleaf:
   common:
     ssl-verification:
       disabled: true
+
+server:
+  ssl:
+    enabled: false
