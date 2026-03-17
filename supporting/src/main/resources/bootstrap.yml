@@ -16,3 +16,6 @@ spring:
       enabled: true
     bus:
       enabled: true
+broadleaf:
+  solr:
+    startup-validation: false

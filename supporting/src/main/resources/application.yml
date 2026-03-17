@@ -26,6 +26,8 @@ broadleaf:
         - es_MX
         - fr
         - fr_FR
+  solr:
+    startup-validation: false
 spring:
   codec:
     max-in-memory-size: 1048576
