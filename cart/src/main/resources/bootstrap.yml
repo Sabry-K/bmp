@@ -13,7 +13,7 @@ spring:
       enabled: true
     bus:
       enabled: true
-  broadleaf:
-    common:
-      ssl-verification:
-        disabled: true
+broadleaf:
+  common:
+    ssl-verification:
+      disabled: true

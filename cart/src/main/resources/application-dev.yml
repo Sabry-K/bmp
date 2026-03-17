@@ -9,3 +9,7 @@
 spring:
   cache:
     type: none # turn off caching to allow for iterating data in dev at runtime without worrying about cache interference
+broadleaf:
+  common:
+    ssl-verification:
+      disabled: true
