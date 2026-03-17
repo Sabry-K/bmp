@@ -6,6 +6,9 @@
 # more details.
 
 spring:
+  common:
+    ssl-verification:
+      disabled: true
   security:
     oauth2:
       client:

@@ -6,6 +6,9 @@
 # more details.
 
 broadleaf:
+  common:
+    ssl-verification:
+      disabled: true
   sandbox:
     preview:
       decoder:

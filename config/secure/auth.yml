@@ -6,6 +6,9 @@
 # more details.
 
 broadleaf:
+  common:
+    ssl-verification:
+      disabled: true
   datasource:
     password: '{cipher}{key:version_1}AYAdnvk8LQYluob6XOZ6qwQgDzkRXfGeJCGt/Eoc1YHwgI+XIQbGyYbQW52KUkg8qGpR6AswK426m9jT4nFp+HO3z97rGiKZVEjO7E+hSkx10UIsJMcfmCt/vUuatJWJrKW82WwMtkgr6uX2ZfBy/roIAyEhI8DFq1y4lGAmIGtKIZxdk04oStc0naj7NevPlKeUWjx/tBGA8SfZDzbB9mDPKslGjcNPwRl063UGe88hI8AW2tXp3N8a3FPkiLrJlUo2T5TvVUfNv4xzdH7y5jyH2JTJujcXjJ8qjruIqRlhp0wMo1p6KrpKUBBqkuyVLy1Nrczb5C9s0PUM42iljOvDg/tIaDC0536LgkT2mOXkCtpmUp/s+7mlsav1/M8x7vVo0ssNmXgYS4L6OICBMWDY4gurx7tAWP0qx05aK4JhF15bwCW6/cqRKn+hS3T1BLRjKorXC9W7+M5qZTx3PCJnJGTuT5uNn2j9SENXg0vkudNQN2zq5XcTRfJJcFKx5FXtqIYDBEOonvuaE8gd+bs+8BwiAsIxL4ndiVrS7Uot/MTRe9T158BUL2k1ykia/wc='
   composite:

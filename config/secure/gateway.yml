@@ -9,6 +9,9 @@ server:
     key-store: file:/var/keys/https-keystore.jks
     key-store-password: '{cipher}{key:version_1}AYBPlUABgBMsiA5FxfLyn2qwXB/PmRu9gYFm++LHOl5uxUgfLJ7dfe7ounBFJgSmhiGNbWzRkPRHzHTHGlmP1Xl1tq8e0hnZnk/yzvZouZ+F0AR4zEWglAdLcjWyumvY7Obpz9ddFen8BhEFHNmsCDH/DrIxy6JzxaUrudmDk1w9rftZlKtVpCloNsly/lIC/V/4WrfWHNdQw14v6ioFZVcgmM6Bp0VK2qzfveMsZ4CGYK2Nw5lltwcUDh7qBeRxBsXzfymhkj1Byk0UcUCcWLy9g9gSCv6/nTO4ToaCrv3vea+PQNIrpVunEUAAXKKmKZJeFY/YhMWWaOXcR8uxPb5LlnZ3sStNWstLrI1/PaKp1ytOBMK4/oHIP23xmOSR28tj2SVOOOa8CAl9sQxDd5WBXxbE+paJWpjLeWIS7r8o1Og1bcf8u9AMSaHYS8aByORz9AnzAAYslrzE1yrVXrNHuEW+dFY7gs3zzFag9cG3GPy0bkhEQ8QZ4mVvHS4DpARqSyA3W/QyMXq+AyKTLdlnS+B13hVInCUYbW1KbAMUJofQxZCJnp5aXzoPNyP5m2M='
 broadleaf:
+  common:
+    ssl-verification:
+      disabled: true
   default:
     server:
       ssl:

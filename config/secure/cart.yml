@@ -39,6 +39,9 @@ spring:
             sasl:
               mechanism: PLAIN
 broadleaf:
+  common:
+    ssl-verification:
+      disabled: true
   sandbox:
     preview:
       decoder:
