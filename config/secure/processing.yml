@@ -85,4 +85,5 @@ spring:
               mechanism: PLAIN
 server:
   ssl:
+    key-store: file:/var/keys/https-keystore.jks
     key-store-password: '{cipher}{key:version_1}AYAdHTgwiOFPG7BGeS763krfJRqrKbl04aH+7ZnZpMWNwMWt5slQU2SoQm2E/z1d72hOihHG/dqkBTweS21/OT4wc/O6eRWiDd+CKrZVHGI+J/aOClEjRH7m5SlRN1kmTfb6aTH5GFjxcq7jiCJRn7pPQOLzuDc5/9PGh966Lrj6xasZW9aFDJbrWlLD186oQ1RowHdc6TalN3SJKqXvZtvXa4yTPNPQeTCexRyiKxXsMhV1VGzG5BcUXq/xf5hyNax5epognTn7sS44BKfHSqGpLEb5rF1UfTxweoiyrlR6FexsScnYsaqfVctu/qZLSNGC/AXOSGiqDlOvJuMuGkymhcYOdM8ACUJSaIrazLoWltf6wJKeQgczfnlsPN208/cj4B+o0NJHM7lSCLiWxR/ny1Bmm2F2nxGNcYdR/Urj+3lVXMXWbAO9lPLJOT3t+/ZJ0mwsTzKYuOP55n9Pskgtk7VeY+7nkvS19ux9dos8/ztIuKSuggKeu54f8TvdqCWjMoaGF1I/4cDT7OoHAmBFrGLLjdWQq9D3ZshArVo4clcfxbvtIZQAyM1xHQWNj4Q='
