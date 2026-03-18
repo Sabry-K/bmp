@@ -6,6 +6,7 @@ import com.broadleafcommerce.data.tracking.core.RepositoryContribution;
 import com.broadleafcommerce.data.tracking.jpa.filtering.narrow.factory.DefaultJpaTrackableRepositoryDelegateHelper;
 import com.broadleafcommerce.data.tracking.jpa.filtering.narrow.factory.JpaTrackableRepositoryDelegateHelper;
 import com.broadleafcommerce.order.provider.jpa.domain.JpaOrder;
+import com.broadleafcommerce.order.provider.jpa.repository.JpaOrderRepository;
 import com.vcs.bmp.microservices.order.controller.CustomOrderEndpoint;
 import com.vcs.bmp.microservices.order.repository.CustomOrderRepository;
 import com.vcs.bmp.microservices.order.repository.ICustomOrderRepository;
@@ -39,7 +40,7 @@ public class OrderConfigurations {
     public RepositoryContribution contribution(
             ICustomOrderRepository fragment) {
         return new RepositoryContribution()
-                .withBaseRepositoryInterface(JpaOrder.class)
+                .withBaseRepositoryInterface(JpaOrderRepository.class)
                 .withConcreteFragments(
                         Collections.singletonMap(
                                 ICustomOrderRepository.class,
