@@ -41,15 +41,14 @@ public class ConflictingOrdersValidationWorkflow extends CartItemValidationActiv
     public CheckoutProcessDto execute(@NonNull CheckoutProcessDto processDto, @Nullable ContextInfo contextInfo) {
         CheckoutProcessDto checkoutProcessDto = super.execute(processDto, contextInfo);
 
-        if (processDto.getCustomerRef() == null || processDto.getCustomerRef().getCustomerId() == null) {
-            log.info("no validation required on previous orders for non users");
+
+        if (contextInfo == null){
+            log.info("can't validate previous orders");
             return processDto;
         }
-        if (contextInfo == null ){
-            log.info("no validation required context info is null");
-            return processDto;
-        }
-        
+        log.info("customer id {} " , contextInfo.getContextRequest().getCustomerContextId());
+        log.info("account id {} " , contextInfo.getContextRequest().getAccountId());
+
         long repeatedItemPurchaseCount = this.customOrderProvider.readCustomerOrderCountForProductSku(
                 ReadCustomerOrdersCountWithSpecifiedItemRequest.builder()
                         .customerId(contextInfo.getContextRequest().getCustomerContextId())
