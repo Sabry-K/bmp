@@ -49,7 +49,7 @@ public class CustomOrderProviderConfiguration {
             log.warn("------------------ SSl verification is disabled --------------------");
             SslContext sslContext = SslContextBuilder
                     .forClient()
-                    .trustManager(InsecureTrustManagerFactory.INSTANCE) // ← skips cert check
+                    .trustManager(InsecureTrustManagerFactory.INSTANCE)// ← skips cert check
                     .build();
             httpClient = httpClient.secure(sslSpec -> sslSpec.sslContext(sslContext));
         }

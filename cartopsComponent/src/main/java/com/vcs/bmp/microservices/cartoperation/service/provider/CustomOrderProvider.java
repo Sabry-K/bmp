@@ -52,10 +52,12 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
         return  this.executeRequest(() -> ((((WebClient.RequestBodySpec)this.getWebClient().get()
                 .uri(readCustomerOrderCountUri, new Object[0]))
                 .headers((headers) -> headers.putAll(this.getHeaders(contextInfo))))
-                .contentType(MediaType.APPLICATION_JSON)
+                .attributes(
+                        ServletOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId(this.getServiceClient()
+                        ))).contentType(MediaType.APPLICATION_JSON)
                 .accept(new MediaType[]{MediaType.APPLICATION_JSON}).retrieve()
                 .bodyToMono(new ParameterizedTypeReference<Integer>() {
-        }).block()));
+        }).block());
     }
 
     private UriComponentsBuilder getBaseUri() {
