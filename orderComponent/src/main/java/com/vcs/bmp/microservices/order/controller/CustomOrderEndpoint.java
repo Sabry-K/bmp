@@ -19,7 +19,7 @@ public class CustomOrderEndpoint {
     private final CustomOrderService customOrderService;
 
     @GetMapping("/purchased-items/count")
-    public ResponseEntity<Integer> readCustomerOrdersCountWithSpecifiedItems(
+    public ResponseEntity<Long> readCustomerOrdersCountWithSpecifiedItems(
             @NonNull ReadCustomerOrdersCountWithSpecifiedItemRequest request, @Nullable ContextInfo contextInfo){
 
         return ResponseEntity.ok(this.customOrderService.countCustomerOrdersWithSpecifiedSkus(request , contextInfo));

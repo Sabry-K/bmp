@@ -41,7 +41,7 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
 
 
     @Override
-    public Integer readCustomerOrderCountForProductSku(ReadCustomerOrdersCountWithSpecifiedItemRequest request,
+    public Long readCustomerOrderCountForProductSku(ReadCustomerOrdersCountWithSpecifiedItemRequest request,
                                                        ContextInfo contextInfo) {
         String readCustomerOrderCountUri = this.getBaseUri()
                 .path(this.properties.getCountOrdersWithSpecificItemForUserUri())
@@ -56,7 +56,7 @@ public class CustomOrderProvider extends AbstractExternalProvider implements ICu
                         ServletOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId(this.getServiceClient()
                         ))).contentType(MediaType.APPLICATION_JSON)
                 .accept(new MediaType[]{MediaType.APPLICATION_JSON}).retrieve()
-                .bodyToMono(new ParameterizedTypeReference<Integer>() {
+                .bodyToMono(new ParameterizedTypeReference<Long>() {
         }).block());
     }
 

@@ -19,7 +19,7 @@ public class CustomOrderService {
 
     private final JpaOrderRepository<JpaOrder> orderRepository;
 
-    public Integer countCustomerOrdersWithSpecifiedSkus(@NonNull ReadCustomerOrdersCountWithSpecifiedItemRequest request,
+    public Long countCustomerOrdersWithSpecifiedSkus(@NonNull ReadCustomerOrdersCountWithSpecifiedItemRequest request,
                                                         @Nullable ContextInfo contextInfo) {
 
         log.info("Counting Orders with Specified skus {}" , request.getItemsSkus());

@@ -46,7 +46,7 @@ public class ConflictingOrdersValidationWorkflow extends CartItemValidationActiv
             return processDto;
         }
 
-        int repeatedItemPurchaseCount = this.customOrderProvider.readCustomerOrderCountForProductSku(
+        long repeatedItemPurchaseCount = this.customOrderProvider.readCustomerOrderCountForProductSku(
                 ReadCustomerOrdersCountWithSpecifiedItemRequest.builder()
                         .customerId(processDto.getCustomerRef().getCustomerId())
                         .accountId(processDto.getCustomerRef().getAccountId())

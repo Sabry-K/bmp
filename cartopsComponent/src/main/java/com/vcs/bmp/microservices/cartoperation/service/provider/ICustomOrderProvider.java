@@ -7,7 +7,7 @@ import org.springframework.lang.Nullable;
 
 public interface ICustomOrderProvider {
 
-     Integer readCustomerOrderCountForProductSku(ReadCustomerOrdersCountWithSpecifiedItemRequest request,
+     Long readCustomerOrderCountForProductSku(ReadCustomerOrdersCountWithSpecifiedItemRequest request,
                                                  @Nullable ContextInfo contextInfo);
 
 }

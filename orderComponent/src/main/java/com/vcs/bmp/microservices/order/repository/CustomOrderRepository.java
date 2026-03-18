@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CustomOrderRepository {
 
-    Integer countOrdersByCustomerIdAndAccountIdAndOrderItemsSkuIn(@NonNull String customerId,
+    Long countOrdersByCustomerIdAndAccountIdAndOrderItemsSkuIn(@NonNull String customerId,
                                                              @NonNull  String accountId ,
                                                              @NonNull List<String> itemSkus,
                                                              @Nullable ContextInfo contextInfo);
