@@ -39,7 +39,8 @@ public class ConflictingOrdersValidationWorkflow extends CartItemValidationActiv
 
     @Override
     public CheckoutProcessDto execute(@NonNull CheckoutProcessDto processDto, @Nullable ContextInfo contextInfo) {
-        CheckoutProcessDto checkoutProcessDto = super.execute(processDto, contextInfo);
+
+        processDto = super.execute(processDto, contextInfo);
 
 
         if (contextInfo == null){
@@ -68,7 +69,7 @@ public class ConflictingOrdersValidationWorkflow extends CartItemValidationActiv
             throw new CheckoutWorkflowActivityException
                     (DefaultCheckoutFailureTypes.INVALID_CART_ITEM_CONFIG.name(),
                             DefaultCheckoutFailureTypes.INVALID_CART_ITEM_CONFIG.getMessagePath(),
-                            checkoutProcessDto);
+                            processDto);
         }
         return processDto;
     }
