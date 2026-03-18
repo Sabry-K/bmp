@@ -22,7 +22,7 @@ public class CartOpsConfiguration {
 
 
     @Bean(name = "cartItemValidationActivity")
-    @Order(1000)
+    @Order(7000)
     CheckoutWorkflowActivity cartItemValidationActivity(CatalogProvider<? extends CatalogItem> catalogProvider,
                                                         CartItemConfigurationService<? extends CatalogItem>
                                                                 cartItemConfigurationService,
