@@ -46,12 +46,18 @@ public class ConflictingOrdersValidationWorkflow extends CartItemValidationActiv
             log.info("can't validate previous orders");
             return processDto;
         }
+
+        if (processDto.getCustomerRef() != null){
+            log.info("Customer Ref Id is {} " ,  processDto.getCustomerRef().getCustomerId());
+            log.info("Customer Ref account Id is {} " ,  processDto.getCustomerRef().getAccountId());
+        }
+
         log.info("customer id {} " , contextInfo.getContextRequest().getCustomerContextId());
         log.info("account id {} " , contextInfo.getContextRequest().getAccountId());
 
         long repeatedItemPurchaseCount = this.customOrderProvider.readCustomerOrderCountForProductSku(
                 ReadCustomerOrdersCountWithSpecifiedItemRequest.builder()
-                        .customerId(contextInfo.getContextRequest().getCustomerContextId())
+                        .customerId(contextInfo.get)
                         .accountId(contextInfo.getContextRequest().getAccountId())
                         .itemsSkus(processDto.getCart().getCartItems().stream().map(CartItem::getSku)
                                 .collect(Collectors.toList()))
