@@ -39,22 +39,26 @@ public class ConflictingOrdersValidationWorkflow extends CartItemValidationActiv
 
     @Override
     public CheckoutProcessDto execute(@NonNull CheckoutProcessDto processDto, @Nullable ContextInfo contextInfo) {
-        CheckoutProcessDto checkoutProcessDto = super.rollback(processDto, contextInfo);
+        CheckoutProcessDto checkoutProcessDto = super.execute(processDto, contextInfo);
 
-        if (processDto.getCustomerRef() == null) {
+        if (processDto.getCustomerRef() == null || processDto.getCustomerRef().getCustomerId() == null) {
             log.info("no validation required on previous orders for non users");
             return processDto;
         }
-
+        if (contextInfo == null ){
+            log.info("no validation required context info is null");
+            return processDto;
+        }
+        
         long repeatedItemPurchaseCount = this.customOrderProvider.readCustomerOrderCountForProductSku(
                 ReadCustomerOrdersCountWithSpecifiedItemRequest.builder()
-                        .customerId(processDto.getCustomerRef().getCustomerId())
-                        .accountId(processDto.getCustomerRef().getAccountId())
+                        .customerId(contextInfo.getContextRequest().getCustomerContextId())
+                        .accountId(contextInfo.getContextRequest().getAccountId())
                         .itemsSkus(processDto.getCart().getCartItems().stream().map(CartItem::getSku)
                                 .collect(Collectors.toList()))
                         .build(), contextInfo
         );
-
+        log.info("repeated Item Purchase count = {} " , repeatedItemPurchaseCount);
         if (repeatedItemPurchaseCount > 0 ){
             throw new CheckoutWorkflowActivityException
                     (DefaultCheckoutFailureTypes.INVALID_CART_ITEM_CONFIG.name(),
