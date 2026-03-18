@@ -5,12 +5,10 @@
 # file to achieve different environment profiles according to Spring's
 # environment profile support:
 # https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.files.profile-specific
-server:
-  ssl:
-    enabled: false
 spring:
   cache:
     type: none # turn off caching to allow for iterating data in dev at runtime without worrying about cache interference
 broadleaf:
-  solr:
-    startup-validation: false
+  common:
+    ssl-verification:
+      disabled: true

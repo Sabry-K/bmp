@@ -4,17 +4,14 @@
 # or Spring. Also, note that you can create additional versions of this
 # file to achieve different environment profiles according to Spring's
 # environment profile support:
-# https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.files.profile-specific
-server:
-  ssl:
-    enabled: false
+# https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.files.profile-specificserver:
 broadleaf:
   common:
     ssl-verification:
       disabled: true
   environment:
     report:
-      disabled: true
+      disabled: false
   tenant:
     global:
       allowed-locales:
