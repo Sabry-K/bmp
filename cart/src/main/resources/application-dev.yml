@@ -12,3 +12,7 @@ broadleaf:
   common:
     ssl-verification:
       disabled: true
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
