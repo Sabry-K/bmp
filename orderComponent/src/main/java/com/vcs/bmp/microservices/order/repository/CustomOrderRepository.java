@@ -9,6 +9,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.*;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +24,7 @@ import java.util.Map;
 public class CustomOrderRepository implements ICustomOrderRepository {
 
 
+    private static final Logger log = LogManager.getLogger(CustomOrderRepository.class);
     private final JpaTrackableRepositoryDelegateHelper<JpaOrder> helper;
 
     @PersistenceContext
@@ -57,10 +60,16 @@ public class CustomOrderRepository implements ICustomOrderRepository {
 
         query.select(builder.countDistinct(root))
                 .where(builder.and(customerPredicate, accountPredicate, skuPredicate));
-
-        return helper.getHelper().count(
-                new JpaNarrowingHelper.JpaCriterias<>(query, null, params),
-                JpaOrder.class,
-                contextInfo);
+        Long count = 0L ;
+        try {
+            count = helper.getHelper().count(
+                    new JpaNarrowingHelper.JpaCriterias<>(query, null, params),
+                    JpaOrder.class,
+                    contextInfo);
+        }catch (Exception e){
+            log.debug(" EXCEPTION IN countOrdersByCustomerIdAndAccountIdAndOrderItemsSkuIn()");
+            log.error("Something went wrong running query " , e);
+        }
+        return count;
     }
 }
