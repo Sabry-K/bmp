@@ -33,7 +33,6 @@ public class ConflictingOrdersValidationWorkflow extends CartItemValidationActiv
 
     @Override
     public CheckoutProcessDto rollback(@NonNull CheckoutProcessDto processDto, ContextInfo contextInfo) {
-
         return super.rollback(processDto, contextInfo);
     }
 
